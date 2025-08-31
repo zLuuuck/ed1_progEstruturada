@@ -45,7 +45,7 @@ Este é um **Jogo da Forca** desenvolvido em linguagem C como parte de um Estudo
 
 ```
 forca/
-├── main.c              # Código principal do jogo
+├── forca.c              # Código principal do jogo
 ├── ranking.csv         # Arquivo de ranking (gerado automaticamente)
 └── README.md           # Este arquivo
 ```
@@ -54,12 +54,12 @@ forca/
 
 ### Compilação (Linux/macOS)
 ```bash
-gcc -o forca main.c
+gcc -o forca forca.c
 ```
 
 ### Compilação (Windows)
 ```bash
-gcc -o forca.exe main.c
+gcc -o forca.exe forca.c
 ```
 
 ### Execução
