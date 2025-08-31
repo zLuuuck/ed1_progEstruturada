@@ -1,4 +1,4 @@
--![Tuiuti Image](https://raw.githubusercontent.com/zLuuuck/ed1_fundcomp/main/imgs/tuiti.png)
+![Tuiuti Image](https://raw.githubusercontent.com/zLuuuck/ed1_fundcomp/main/imgs/tuiti.png)
 
 # 🎮 Jogo da Forca em C
 
@@ -161,7 +161,6 @@ gcc -o forca.exe forca.c && forca.exe
 forca/
 ├── 📄 forca.c                 # Código fonte principal
 ├── 📊 ranking.csv            # Arquivo de ranking (auto-gerado)
-├── 📁 saves/                 # Pasta de saves (futuro)
 └── 📖 README.md             # Documentação
 ```
 
@@ -171,9 +170,9 @@ forca/
   _______ 
  |/      |
  |     ('-')
- |      /|\ 
+ |      /| 
  |       | 
- |      / \ 
+ |       
 _|___
 
 Palavra: C _ M P _ T _ D _ R
@@ -245,18 +244,9 @@ typedef struct {
 
 ### 📊 Formato do CSV
 ```csv
-Nome,Pontos,Palavra,Erros,Tempo,Data
 Joao,450,COMPUTADOR,2,45.5,2024-03-15 14:30:25
 Maria,320,MEMORIA,4,60.2,2024-03-15 15:45:12
 ```
-
-## 🔮 Melhorias Futuras
-
-- [ ] **Sistema de salvamento** de progresso
-- [ ] **Multiplos níveis** de dificuldade
-- [ ] **Modo multiplayer** por rede
-- [ ] **Sons e efeitos** sonoros
-- [ ] **Interface gráfica** alternativa
 
 ## 👨‍💻 Autor
 
