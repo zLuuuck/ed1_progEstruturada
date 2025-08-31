@@ -258,4 +258,20 @@ Desenvolvido como parte do Estudo Dirigido de Programação Estruturada
 Este projeto é para **fins educacionais**.  
 Sinta-se livre para usar e modificar para aprendizado!
 
+## 📚 Referências
+
+- [Structs em C - PUCRS](https://www.inf.pucrs.br/~pinho/LaproI/Structs/Structs.htm)
+- [Programação em C Orientado a Objetos - Murilo](https://murilo.wordpress.com/2009/08/05/como-programar-em-c-orientado-a-objetos/)
+- [Beej's Guide to C Programming](https://beej.us/guide/bgc/html/split/index.html)
+- [IBM ILE C Language Reference](https://www.ibm.com/docs/pt/i/7.4.0?topic=reference-pdf-file-ile-cc-language)  
+  PDF: https://www.ibm.com/docs/pt/ssw_ibm_i_74/pdf/sc097852.pdf
+- [C11 Standard - ISO/IEC 9899:2024](https://port70.net/~nsz/c/c11/n1570.html)
+- [glibc Manual](https://sourceware.org/glibc/manual/)  
+  PDF: https://sourceware.org/glibc/manual/latest/pdf/libc.pdf
+- [cplusplus.com Reference](https://cplusplus.com/)  
+  Reference: https://cplusplus.com/reference/
+- [GeeksforGeeks - C Programming Language](https://www.geeksforgeeks.org/c/c-programming-language/)
+- [Linux man page: select(2)](https://man7.org/linux/man-pages/man2/select.2.html)
+- Slides do professor Diógenes Cago Furlan
+
 ---
