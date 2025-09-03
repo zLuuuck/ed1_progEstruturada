@@ -1,12 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+
+// Configurações específicas para Windows
+#ifdef _WIN32
+#include <windows.h>
+#include <conio.h>
+#define sleep(x) Sleep((x) * 1000)
+#define usleep(x) Sleep((x) / 1000)
+#else
+#include <unistd.h>
 #include <sys/select.h>
 #include <termios.h>
-#include <unistd.h>
+#endif
 
 // Variáveis globais para o cronômetro
 double tempo_decorrido = 0.0;
@@ -15,6 +23,9 @@ time_t inicio_jogo;
 // Função para configurar o terminal em modo não-canônico
 void configurarTerminal(int config)
 {
+#ifdef _WIN32
+    // No Windows, usamos _kbhit() e _getch() que não precisam de configuração especial
+#else
     static struct termios old, new;
 
     if (config)
@@ -28,16 +39,21 @@ void configurarTerminal(int config)
     {
         tcsetattr(STDIN_FILENO, TCSANOW, &old);
     }
+#endif
 }
 
 // Função para verificar se há entrada disponível
 int entradaDisponivel()
 {
+#ifdef _WIN32
+    return _kbhit() > 0;
+#else
     struct timeval tv = {0L, 0L};
     fd_set fds;
     FD_ZERO(&fds);
     FD_SET(STDIN_FILENO, &fds);
     return select(1, &fds, NULL, NULL, &tv) > 0;
+#endif
 }
 
 // Função para ler caractere sem bloquear
@@ -45,9 +61,13 @@ char lerCharNaoBloqueante()
 {
     if (entradaDisponivel())
     {
+#ifdef _WIN32
+        return _getch();
+#else
         char c;
         read(STDIN_FILENO, &c, 1);
         return c;
+#endif
     }
     return '\0';
 }
@@ -71,7 +91,7 @@ typedef struct
 {
     char palavra[tamanho];
     char dica[100];
-} Palavra; // Nome dado para podermos utilizar a estrutura.
+} Palavra;
 
 typedef struct
 {
@@ -246,7 +266,7 @@ int jogo()
 
         if (input != '\0')
         {
-            if (input == '\n')
+            if (input == '\r' || input == '\n') // Windows usa \r\n
             {
                 // Ignora enter
                 continue;
