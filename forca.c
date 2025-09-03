@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+#include <locale.h>
 
 // Configurações específicas para Windows
 #ifdef _WIN32
@@ -123,6 +124,7 @@ int main()
 
 void menuPrincipal()
 {
+    setlocale(LC_ALL, "Portuguese_Brazil");
     limparTela();
     char opcao[10];
     int points = 0;
@@ -221,8 +223,8 @@ int jogo()
     char letras_chutadas[26] = {0};
     int tentativas_totais = 0;
     int letras_encontradas = 0;
-
-    for (int i = 0; i < tamanho_palavra; i++)
+    int i;
+    for (i = 0; i < tamanho_palavra; i++)
         letras_descobertas[i] = '_';
     letras_descobertas[tamanho_palavra] = '\0';
 
@@ -242,7 +244,8 @@ int jogo()
             forca(erros);
 
             printf("\nPalavra: ");
-            for (int i = 0; i < tamanho_palavra; i++)
+            int i;
+            for (i = 0; i < tamanho_palavra; i++)
                 printf("%c ", letras_descobertas[i]);
 
             printf("\nLetras chutadas: ");
@@ -291,7 +294,8 @@ int jogo()
                     tentativas_totais++;
 
                     int acertou = 0;
-                    for (int i = 0; i < tamanho_palavra; i++)
+                    int i;
+                    for (i = 0; i < tamanho_palavra; i++)
                     {
                         if (palavra[i] == guess && letras_descobertas[i] == '_')
                         {
