@@ -249,7 +249,7 @@ int jogo()
                 printf("%c ", letras_descobertas[i]);
 
             printf("\nLetras chutadas: ");
-            for (int i = 0; i < 26; i++)
+            for (i = 0; i < 26; i++)
                 if (letras_chutadas[i])
                     printf("%c ", 'A' + i);
 
@@ -644,7 +644,8 @@ void carregar_e_mostrar_ranking()
     printf("----------------------------------------------------------------------\n");
 
     int limite = (count > 10) ? 10 : count;
-    for (int i = 0; i < limite; i++)
+    int i;
+    for (i = 0; i < limite; i++)
     {
         printf("%2d.  %-10s %-7d %-12s %-2d    %-6.1f %s\n", i + 1, rankings[i].nome, rankings[i].pontos, rankings[i].palavra, rankings[i].erros, rankings[i].tempo, rankings[i].data_str);
     }
